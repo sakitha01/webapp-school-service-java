@@ -1,0 +1,13 @@
+server:  port: 8090
+spring:
+  datasource:
+    driverClassName: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/school_mgmt?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC
+    username: root
+    password: 
+  jpa:
+    hibernate.ddl-auto: update
+    generate-ddl: true
+    show-sql: true
+  servlet:    multipart:      enabled: true
+      file-size-threshold: 2KB      max-file-size: 200MB      max-request-size: 215MB#file:  upload-dir: ./uploads 
