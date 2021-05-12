@@ -13,6 +13,8 @@ import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -83,6 +85,20 @@ public class StudentController {
 	@GetMapping("/all_students")
 	public ResponseEntity<List<StudentDetails>> getAllStudents() {
 		return new ResponseEntity<List<StudentDetails>>(studentService.getAllStudents(), HttpStatus.CREATED);
+
+	}
+	
+	@PostMapping("/edit_save")
+	public AppResponse executeeditsave(@RequestParam(value = AppConstants.STUDENT_JSON_PARAM) String studJson,
+			@RequestParam(required = true, value = AppConstants.STUDENT_FILE_PARAM) MultipartFile file)
+			throws JsonParseException, JsonMappingException, IOException {
+		StudentDetails student = objectMapper.readValue(studJson, StudentDetails.class);
+		//student.setProfilePicPath(fileDownloadUri);
+		studentService.executeeditsave(student);
+
+		return new AppResponse(AppConstants.SUCCESS_CODE, AppConstants.SUCCESS_MSG);
+		
+		//return studentService.executeeditsave(student);
 
 	}
 

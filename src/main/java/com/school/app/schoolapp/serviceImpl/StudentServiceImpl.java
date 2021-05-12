@@ -1,6 +1,7 @@
 package com.school.app.schoolapp.serviceImpl;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -26,5 +27,11 @@ public class StudentServiceImpl implements StudentService {
 	public List<StudentDetails> getAllStudents() {
 		return studentRepository.findAll();
 	}
+
+	@Override
+	public StudentDetails executeeditsave(StudentDetails student) {
+		return studentRepository.save(student);
+	}
+
 
 }

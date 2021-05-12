@@ -3,6 +3,7 @@ package com.school.app.schoolapp.utill;
 public class AppConstants {
 	public static final String STUDENT_URI = "/create_student";
 	public static final String STUDENT_JSON_PARAM = "studJson";
+	public static final String TEACHER_JSON_PARAM = "teachJson";
 	public static final String STUDENT_FILE_PARAM = "file";
 	public static final String SUCCESS_CODE = "STD-200";
 	public static final String SUCCESS_MSG = "student created successfully";
