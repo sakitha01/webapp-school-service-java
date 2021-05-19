@@ -1,10 +1,8 @@
 package com.school.app.schoolapp.serviceImpl;
 
 import java.util.List;
-import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 import com.school.app.schoolapp.model.StudentDetails;
