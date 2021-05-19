@@ -22,10 +22,10 @@ public class Address {
 	String state;
 	String country;
 	String pincode;
-	
+
 	@ManyToOne
-	@JoinColumn(name="teacher_id", nullable=false)
-	private Teacher teacherAddress;
+	@JoinColumn(name="staff_id", nullable=false)
+	private Staff staffAddress;
 
 	public long getId() {
 		return id;
@@ -81,6 +81,14 @@ public class Address {
 
 	public void setPincode(String pincode) {
 		this.pincode = pincode;
+	}
+
+	public Staff getstaffAddress() {
+		return staffAddress;
+	}
+
+	public void setstaffAddress(Staff staffAddress) {
+		this.staffAddress = staffAddress;
 	}
 
 	

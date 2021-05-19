@@ -8,11 +8,10 @@ import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 
 @Entity
-public class Teacher {
+public class Staff {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
@@ -25,11 +24,9 @@ public class Teacher {
 	String mobileNumber;
 	String fatherName;
 	String motherName;
-	//Address address;
 	
 	@OneToMany(fetch = FetchType.LAZY)
-	@JoinColumn(name="address_id", nullable=false)
-	private Set<Address> addressDetails;
+	private Set<Address> address;
 
 	public long getId() {
 		return id;
@@ -103,12 +100,12 @@ public class Teacher {
 		this.motherName = motherName;
 	}
 
-	public Set<Address> getAddressDetails() {
-		return addressDetails;
+	public Set<Address> getAddress() {
+		return address;
 	}
 
-	public void setAddressDetails(Set<Address> addressDetails) {
-		this.addressDetails = addressDetails;
+	public void setAddress(Set<Address> address) {
+		this.address = address;
 	}
 	
 	
